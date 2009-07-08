@@ -3,7 +3,7 @@ Array.slice = function slice(arr) {
 };
 
 (function fn(method) {
-	if(method in array) return fn;
+	if(method in Array) return fn;
 	Array[method] = function(arr) {
 		return Array.prototype[method].apply(arr, Array.slice(arguments, 1));
 	};

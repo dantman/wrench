@@ -196,5 +196,5 @@ String.prototype.toUnderscore = function toUnderscore() {
  */
 String.prototype.toDash = function toDash() {
 	return this.replace(/[A-Z]/, function(i) { return '-' + i.lc; });
-}
+};
 
