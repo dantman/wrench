@@ -5,6 +5,7 @@ PREFIX = .
 DIST_DIR = ${PREFIX}/dist
 
 BROWSER_FILES = ${SRC_DIR}/top.txt\
+	${SRC_DIR}/Object.js\
 	${SRC_DIR}/String.js\
 	${SRC_DIR}/String.generic.js\
 	${SRC_DIR}/Array.moz.js\
@@ -14,6 +15,7 @@ BROWSER_FILES = ${SRC_DIR}/top.txt\
 	${SRC_DIR}/Math.js
 
 SM_FILES = ${SRC_DIR}/top.txt\
+	${SRC_DIR}/Object.js\
 	${SRC_DIR}/String.js\
 	${SRC_DIR}/String.18.js\
 	${SRC_DIR}/String.generic.js\

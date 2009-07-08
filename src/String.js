@@ -17,7 +17,7 @@ String.prototype.repeat = function(num) {
  * @param int len The length of the string to expand to
  * @return String the expanded string
  */
-String.prototype.expand = function(len) this.repeat(Math.ceil(len / this.length)).chop(len);
+String.prototype.expand = function(len) this.repeat(Math.ceil(len / this.length)).substr(0, len);
 
 /**
  * Return a version of this string with the first character in upper case
@@ -65,6 +65,23 @@ String.prototype.contains = function contains(other) {
 };
 
 /**
+ * Count the number of times a substring is found within this string
+ * 
+ * @param other The substring to search for
+ * @param offset An optional offset from the start of the string for the search
+ * @return Number An integer indicating how many times the substring is found
+ */
+String.prototype.numberOf = function(other, offset) {
+	offset = offset || 0;
+	var i, c = 0;
+	while( (i = this.indexOf(other, offset)) && i >= 0 ) {
+		c++;
+		offset = i + other.length;
+	}
+	return c;
+};
+
+/**
  * Reverse the order of characters in this string
  * 
  * @return String A new string with characters in the reverse order
@@ -88,16 +105,31 @@ if ( !String.prototype.trim )
 		return this.trimLeft().trimRight();
 	};
 
-String.prototype.strip = function strip() {
-
+String.prototype.strip = function strip(chars, internal) {
+	if(!chars) throw new TypeError("Stripping requires a list of characters to strip");
+	internal = internal || 3;
+	var chars = Object.invert(chars); // This creates a table where chars[char] will be truthy/falsey for inclusion
+	
+	var start = 0, end = this.length;
+	
+	if ( internal & 1 ) { // Left
+		while( this.charAt(start) in chars )
+			start++;
+	}
+	if ( internal & 2 ) { // Right
+		while( this.charAt(end-1) in chars && end > start )
+			end--;
+	}
+	
+	return this.substring(start, end);
 };
 
-String.prototype.stripLeft = function stripLeft() {
-
+String.prototype.stripLeft = function stripLeft(chars) {
+	return this.strip(chars, 1);
 };
 
-String.prototype.stripRight = function stripRight() {
-
+String.prototype.stripRight = function stripRight(chars) {
+	return this.strip(chars, 2);
 };
 
 String.prototype.pad = function pad() {
