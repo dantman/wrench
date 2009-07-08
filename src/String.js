@@ -110,7 +110,8 @@ if ( !String.prototype.trim )
 String.prototype.strip = function strip(chars, internal) {
 	if(!chars) throw new TypeError("Stripping requires a list of characters to strip");
 	internal = internal || 3;
-	var chars = Object.invert(chars); // This creates a table where chars[char] will be truthy/falsey for inclusion
+	// This creates a table where chars[char] will be truthy/falsey for inclusion
+	var chars = Object.invert(typeof chars === 'string' ? chars.split('') : chars);
 	
 	var start = 0, end = this.length;
 	
