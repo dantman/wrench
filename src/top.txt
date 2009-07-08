@@ -1,0 +1,9 @@
+// -*- coding: UTF-8 -*-
+/*!
+ * Wrench @BUILDTYPE JavaScript Environment v@VERSION
+ * http://wrench.monkeyscript.org/
+ *
+ * Copyright © 2009 Daniel Friesen
+ * Licensed under the MIT license
+ */
+
