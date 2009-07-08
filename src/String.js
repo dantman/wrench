@@ -181,20 +181,20 @@ String.prototype.scan = function scan(regex) {
  * cammel case (fooBar) name.
  */
 String.prototype.toCamelCase = function toCamelCase() {
-	return this.replace(/[-_][a-z]/g, function(i) { return i[1].uc; });
+	return this.replace(/[-_][a-z]/g, function(i) { return i[1].toUpperCase(); });
 };
 
 /**
  * Converts a cammel case (fooBar) name into an underscore (foo_bar) style name.
  */
 String.prototype.toUnderscore = function toUnderscore() {
-	return this.replace(/[A-Z]/, function(i) { return '_' + i.lc; });
+	return this.replace(/[A-Z]/, function(i) { return '_' + i.toLowerCase(); });
 };
 
 /**
  * Converts a cammel case (fooBar) name into a dash (foo-bar) style name.
  */
 String.prototype.toDash = function toDash() {
-	return this.replace(/[A-Z]/, function(i) { return '-' + i.lc; });
+	return this.replace(/[A-Z]/, function(i) { return '-' + i.toLowerCase(); });
 };
 
