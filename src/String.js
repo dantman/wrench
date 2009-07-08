@@ -4,7 +4,7 @@
  * @param int num The number of times to repeat
  * @return String the repeated string
  */
-String.prototype.repeat = function(num) {
+String.prototype.repeat = function repeat(num) {
 	var arr = new Array(num||1);
 	for ( var i = arr.length-1; i >= 0; --i )
 		arr[i] = this;
@@ -17,7 +17,7 @@ String.prototype.repeat = function(num) {
  * @param int len The length of the string to expand to
  * @return String the expanded string
  */
-String.prototype.expand = function(len) this.repeat(Math.ceil(len / this.length)).substr(0, len);
+String.prototype.expand = function expand(len) this.repeat(Math.ceil(len / this.length)).substr(0, len);
 
 /**
  * Return a version of this string with the first character in upper case
@@ -71,7 +71,7 @@ String.prototype.contains = function contains(other) {
  * @param offset An optional offset from the start of the string for the search
  * @return Number An integer indicating how many times the substring is found
  */
-String.prototype.numberOf = function(other, offset) {
+String.prototype.numberOf = function numberOf(other, offset) {
 	offset = offset || 0;
 	var i, c = 0;
 	while( (i = this.indexOf(other, offset)) && i >= 0 ) {
@@ -166,7 +166,11 @@ String.prototype.partitionRight = function partitionRight(sep) {
 		[ '', '', this ];
 };
 
-String.prototype.explode = function() {
+String.prototype.explode = function explode(sep, limit) {
+	
+};
+
+String.prototype.scan = function scan(regex) {
 	
 };
 

@@ -1,7 +1,7 @@
 /**
  * Check if the array contains an item
  */
-Array.prototype.has = function(item) {
+Array.prototype.has = function has(item) {
 	return this.indexOf(item) > -1;
 };
 
@@ -10,8 +10,8 @@ Array.prototype.has = function(item) {
  * 
  * @return Array A new array with a unique list of all items in this array
  */
-Array.prototype.unique = function() {
-	return this.filter(function(item, i, arr) arr.indexOf(item) >= i);
+Array.prototype.unique = function unique() {
+	return this.filter(function(item, i, arr) { return arr.indexOf(item) >= i; });
 };
 
 /**
@@ -19,8 +19,8 @@ Array.prototype.unique = function() {
  * 
  * @return Array The same array for convenience
  */
-Array.prototype.shuffle = function() {
-	return this.sort(function() Math.random() > 0.5 ? 1 : -1);
+Array.prototype.shuffle = function shuffle() {
+	return this.sort(function() { return Math.random() > 0.5 ? 1 : -1; });
 };
 
 /**
@@ -28,8 +28,7 @@ Array.prototype.shuffle = function() {
  * This is provided for client-side convenience so you have the same technique
  * for getting an item on both an array and a list of html nodes.
  */
-Array.prototype.item = function(i) {
+Array.prototype.item = function item(i) {
 	return this[i];
 };
-
 
