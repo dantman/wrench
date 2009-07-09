@@ -2,10 +2,11 @@
  * Repeat a string a number of times.
  * 
  * @param int num The number of times to repeat
+ * @param String separator An optional separator to insert in between the strings
  * @return String the repeated string
  */
-String.prototype.repeat = function repeat(num) {
-	return Array.fill(num||1, this).join('');
+String.prototype.repeat = function repeat(num, separator) {
+	return Array.fill(num||1, this).join(separator||'');
 };
 
 /**
