@@ -37,7 +37,17 @@ String.prototype.toFirstUpperCase = function toFirstUpperCase() {
  */
 String.prototype.toFirstLowerCase = function toFirstLowerCase() {
 	return this.charAt(0).toLowerCase() + this.substr(1);
-}
+};
+
+/**
+ * Return a version fo this string with all words matched by \w given an upper
+ * case first character.
+ * 
+ * @return String The string with the modified case
+ */
+String.prototype.toTitleCase = function toTitleCase() {
+	return this.replace(/\w+/g, function(m) { return m.toFirstUpperCase(); });
+};
 
 /**
  * Check and see if this string starts with another
