@@ -12,6 +12,7 @@ BROWSER_FILES = ${SRC_DIR}/top.txt\
 	${SRC_DIR}/Array.js\
 	${SRC_DIR}/Array.15.js\
 	${SRC_DIR}/Array.generic.js\
+	${SRC_DIR}/Number.js\
 	${SRC_DIR}/Math.js
 
 SM_FILES = ${SRC_DIR}/top.txt\
@@ -23,6 +24,7 @@ SM_FILES = ${SRC_DIR}/top.txt\
 	${SRC_DIR}/Array.18.js\
 	${SRC_DIR}/Array.generic.js\
 	${SRC_DIR}/Getters.js\
+	${SRC_DIR}/Number.js\
 	${SRC_DIR}/Math.js
 
 WRENCH15 = ${DIST_DIR}/wrench15.js

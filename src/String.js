@@ -143,16 +143,18 @@ String.prototype.stripRight = function stripRight(chars) {
 	return this.strip(chars, 2);
 };
 
-String.prototype.pad = function pad() {
-
+String.prototype.pad = function pad(len, chars) {
+	return this.padLeft(Math.floor(len/2), chars).padRight(Math.ceil(len/2), chars);
 };
 
-String.prototype.padLeft = function padLeft() {
-
+String.prototype.padLeft = function padLeft(len, chars) {
+	chars = chars || ' ';
+	return chars.expand(Math.max(0, len - this.length)) + this;
 };
 
 String.prototype.padRight = function padRight() {
-
+	chars = chars || ' ';
+	return this + chars.expand(Math.max(0, len - this.length));
 };
 
 String.prototype.partition = function partition(sep) {
