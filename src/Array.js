@@ -1,4 +1,17 @@
 /**
+ * Create a new array of a specified length filled with a certain value
+ * 
+ * @param size The size of the array to create
+ * @param value The value to populate all the items in the array with
+ */
+Array.fill = function fill(size, value) {
+	var arr = new Array(Number(size||0));
+	for ( var i = arr.length-1; i >= 0; --i )
+		arr[i] = value;
+	return arr;
+};
+
+/**
  * Check if the array contains an item
  */
 Array.prototype.has = function has(item) {

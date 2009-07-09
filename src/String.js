@@ -5,10 +5,7 @@
  * @return String the repeated string
  */
 String.prototype.repeat = function repeat(num) {
-	var arr = new Array(num||1);
-	for ( var i = arr.length-1; i >= 0; --i )
-		arr[i] = this;
-	return arr.join('');
+	return Array.fill(num||1, this).join('');
 };
 
 /**
