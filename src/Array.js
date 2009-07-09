@@ -32,3 +32,10 @@ Array.prototype.item = function item(i) {
 	return this[i];
 };
 
+/**
+ * Return a random item from an array
+ */
+Array.prototype.rand = function() {
+	return this[Math.rand(0, this.length-1)];
+};
+
