@@ -63,6 +63,13 @@ Array.prototype.remove = function remove(item, max) {
 };
 
 /**
+ * Clear an array of all items
+ */
+Array.prototype.clear = function clear() {
+	return this.splice(0, this.length);
+};
+
+/**
  * Return a random item from an array
  */
 Array.prototype.rand = function() {
