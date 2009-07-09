@@ -46,6 +46,23 @@ Array.prototype.item = function item(i) {
 };
 
 /**
+ * Remove the first (or more) occurrence(s) of an item from the array
+ * 
+ * @param item The item to remove
+ * @param max The max number of items to remove, use Infinity to remove them all
+ */
+Array.prototype.remove = function remove(item, max) {
+	max = max || 1;
+	while(max) {
+		var i = this.indexOf(item);
+		if( i < 0 ) break;
+		this.splice(i, 1);
+		max--;
+	}
+	// ToDo: Determine a reasonable return value
+};
+
+/**
  * Return a random item from an array
  */
 Array.prototype.rand = function() {
