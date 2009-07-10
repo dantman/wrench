@@ -1,6 +1,6 @@
 // -*- coding: UTF-8 -*-
 /*!
- * Wrench @BUILDTYPE JavaScript Environment v@VERSION
+ * Wrench JavaScript @JSVER Environment v@VERSION
  * http://wrench.monkeyscript.org/
  *
  * Copyright © 2009 Daniel Friesen

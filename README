@@ -1,0 +1,33 @@
+Directory structure
+-------------------
+
+    README      : This readme file
+    TODO        : ToDo and discussion notes
+    version.txt : Static version file used when building the project
+    Makefile    : Project makefile for building the project
+    build/ : Libraries used for building
+         |- yuicompressor-2.4.2.jar : YUI Compressor for minification of code
+         `
+    src/ : Source files
+       |- top.txt           : Introductory comment block for builds
+       |- Object.js         : Extra Object functions
+       |- Number.js         : Extra Number prototypes
+       |- Math.js           : Extra Math functions
+       |- Array.js          : Extra Array prototypes
+       |- Array.old.js      : Some prototypes from Array.new.js in formats which work in JS 1.5
+       |- Array.new.js      : Array prototypes which require JS 1.8 to work
+       |- Array.iterator.js : Bonus Array iterator that makes `for ( var item in [...] )` work
+       |- Array16.js        : Array prototypes added in JS 1.6
+       |- Array18.js        : Array prototypes added in JS 1.8
+       |- Array.generic.js  : Array generics
+       |- String.js         : Extra String prototypes
+       |- String.generic.js : String generics
+       |- Getters.js        : Extra getters which require JS 1.7
+       `
+    dist/ : Not part of the repo, these are created when the project is built
+        |- wrench15.js     : Wrench.js file for JS 1.5 (ie: Browsers)
+        |- wrench15.min.js : Minified version of wrench15.js for production use on the web
+        |- wrench17.js     : Wrench.js file for JS 1.7 (ie: Rhino 1.7 and Spidermonkey 1.7)
+        |- wrench18.js     : Wrench.js file for JS 1.8 and above (ie: Spidermonkey 1.8+)
+        `
+
