@@ -183,8 +183,21 @@ String.prototype.explode = function explode(sep, limit) {
 	
 };
 
-String.prototype.scan = function scan(regex) {
+String.prototype.scan = function scan(regex, offset) {
+	var m, list = [];
+	offset = offset || 0;
+	if ( regex.global ) {
+		var str = this.substr(offset);
+		while( m = regex.exec(str) )
+			list.push( m.length > 1 ? m.slice(1) : m[0] );
+	} else {
+		while( m = this.substr(offset).match(regex) ) {
+			offset = m.index + m[0].length;
+			list.push( m.length > 1 ? m.slice(1) : m[0] );
+		}
+	}
 	
+	return list;
 };
 
 /**
