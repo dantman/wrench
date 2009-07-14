@@ -12,6 +12,16 @@ Array.fill = function fill(size, value) {
 };
 
 /**
+ * Return a new array with the contents of this array repeated over
+ * `num` amount of times.
+ * 
+ * @param num Integer The number of times to repeat the array
+ */
+Array.prototype.repeat = function repeat(num) {
+	return Array.prototype.concat.apply([], Array.fill(num, this));
+};
+
+/**
  * Check if the array contains an item
  */
 Array.prototype.has = function has(item) {
@@ -63,6 +73,15 @@ Array.prototype.remove = function remove(item, max) {
 };
 
 /**
+ * Append a list of items from an array onto the end of this array
+ * 
+ * @param items Array The array of items to append to this array
+ */
+Array.prototype.append = function append(items) {
+	return Array.prototype.push.apply( this, items );
+};
+
+/**
  * Clear an array of all items
  */
 Array.prototype.clear = function clear() {
@@ -70,7 +89,21 @@ Array.prototype.clear = function clear() {
 };
 
 /**
- * Return a random item from an array
+ * Clean out all undefined and null values inside of an array
+ * if false is passed to empty then only undefined items are cleaned
+ * if true is passed to empty then empty strings will also be cleaned
+ */
+Array.prototype.clean = function clean(empty) {
+	return this.filter(function(item) {
+		if ( item === undefined ) return false;
+		if ( empty !== false && item === null ) return false;
+		if ( empty === true && item === "" ) return false;
+		return true;
+	});
+};
+
+/**
+ * Return a random item from this array.
  */
 Array.prototype.rand = function() {
 	return this[Math.rand(0, this.length-1)];
@@ -85,3 +118,20 @@ Array.prototype.rand = function() {
 Array.prototype.reduceNative = function reduceNative(fn) {
 	return this.reduce(function(a, b) { return fn(a, b); });
 };
+
+/**
+ * Returns a new version of this array which has been flattened
+ * Flattening turns an array like [[1,2,3], [4,5,6], [7,8,9]];
+ * into one like [1,2,3,4,5,6,7,8,9];
+ */
+Array.prototype.flat = function flat() {
+	var arr = [];
+	function reduce(item) {
+		if( item instanceof Array )
+			item.forEach(reduce);
+		else arr.push(item);
+	};
+	this.forEach(reduce);
+	return arr;
+};
+
