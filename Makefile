@@ -21,6 +21,7 @@ FILES17 = ${FILES_TOP}\
 	${SRC_DIR}/Array18.js\
 	${SRC_DIR}/Array.js\
 	${SRC_DIR}/Array.old.js\
+	${SRC_DIR}/Array.iterator.js\
 	${SRC_DIR}/Getters.js
 
 FILES18 = ${FILES_TOP}\
