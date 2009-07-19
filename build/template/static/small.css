@@ -1,0 +1,20 @@
+
+#sidebar {
+	width: 105px;
+	margin: 15px 5px 0;
+}
+#content {
+	margin-top: 15px;
+}
+
+#content,
+#footer {
+	margin-left: 115px;
+}
+
+#firebugIconDiv { diaplay: none !important; visibility: collapse; }
+
+a.desktoplink {
+	color: inherit;
+	text-decoration: inherit;
+}

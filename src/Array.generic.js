@@ -1,3 +1,7 @@
+/**
+ * @fileOverview This file contains generics for Array methods
+ */
+
 Array.slice = function slice(arr) {
 	return Array.prototype.slice.apply(arr, Array.prototype.slice.call(arguments, 1));
 };

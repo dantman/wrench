@@ -1,0 +1,174 @@
+
+html { font-size: 100% }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 1em;
+	font-weight: inherit;
+	font-style: inherit;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+
+body {
+	font-family: Arial, Helvetica, Geneva, sans-serif;
+	background: #f6f6f6 url(img/page-fade.png) center top repeat-x;
+	line-height: 1;
+	color: black;
+	font-size: .8em;
+}
+
+code, pre {
+	font-family: Courier New, Courier New, Courier, monospace;
+}
+
+a[href^="http://"] .icon {
+	display: inline-block;
+	background: url(img/external.png);
+	margin-bottom: -.1em;
+	margin-left: 2px;
+	padding: 0;
+	line-height: 1;
+	text-decoration: none;
+	width: 10px;
+	height: 10px;
+}
+
+a[href^="http://monkeyscript.org"] .icon,
+a[href^="http://lite.monkeyscript.org"] .icon,
+a[href^="http://wrench.monkeyscript.org"] .icon,
+a[href^="http://draft.monkeyscript.org"] .icon,
+a[href^="http://twitter.com"] .icon,
+a[href^="http://groups.google.com"] .icon,
+a[href^="http://github.com"] .icon,
+a[href^="mailto:"] .icon { width: 16px; height: 16px; margin-bottom: -.25em; }
+
+a[href^="http://monkeyscript.org"] .icon,
+a[href^="http://lite.monkeyscript.org"] .icon,
+a[href^="http://wrench.monkeyscript.org"] .icon,
+a[href^="http://draft.monkeyscript.org"] .icon { background: url(img/link_icon.gif); }
+a[href^="http://twitter.com"] .icon { background: url(img/twitter.png); }
+a[href^="http://groups.google.com"] .icon { background: url(img/googlegroup.png); }
+a[href^="http://github.com"] .icon { background: url(img/github.png); }
+a[href^="mailto:"] .icon { background: url(img/mail_icon.gif); }
+
+#content {
+	background-color: #fff;
+	border: 1px solid #a7d7f9;
+	margin: 75px 15px 15px 200px;
+	padding: 15px 15px 0;
+}
+
+#sidebar {
+	position: absolute;
+	top: 0; left: 0;
+	width: 190px;
+	margin: 75px 15px 0;
+	font-size: 1.05em;
+}
+
+#sidebar h5 {
+	font-size: 1.1em;
+	color: #666;
+}
+
+#sidebar ul {
+	display: block;
+	list-style: none;
+	background: url(img/portal-break.png) no-repeat;
+	margin: 5px 0;
+	padding: 10px 0;
+}
+#sidebar li { padding: 3px 3px 1px }
+#sidebar a {
+	display: block;
+	color: #0645AD;
+	text-decoration: none;
+	width: 100%;
+}
+#sidebar li a:active,
+#sidebar li:hover a { color: #0B0080 }
+
+#footer {
+	margin: 0 15px 0 200px;
+	font-size: .9em;
+	padding: 2px;
+}
+
+p,
+#content ul {
+	margin: .4em 7px 1em 2px;
+	line-height: 1.25;
+}
+
+#content ul { margin-left: 17px }
+#content ul ul { margin-left: 15px }
+
+h1 {
+	font-size: 2.2em;
+	border-bottom: 1px solid #a7d7f9;
+	margin-bottom: 10px;
+}
+
+h2 {
+	font-size: 1.5em;
+	border-bottom: 1px dotted #a7d7f9;
+	/*display: inline;*/
+	margin-bottom: 7px;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { text-decoration: none }
+
+table {
+	margin: 1em 1em 1em 0;
+	background-color: #f9f9f9;
+	border: 1px #aaa solid;
+	border-collapse: collapse;
+}
+table th, table td {
+	border: 1px #aaa solid;
+	padding: 0.2em;
+}
+table th {
+	font-weight: bold;
+	background-color: #f2f2f2;
+	text-align: center;
+}
+table th.left {
+	text-align: left;
+}
+table caption {
+	font-weight: bold;
+}
+table .support { background-color: #6f7 }
+table .enhanced { background-color: #6f7 }
+table .native { background-color: #0bc }
+table .support.native { background-color: #0fa }
+table .nosupport { background-color: #f55 }
+

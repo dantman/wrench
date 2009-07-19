@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Index - Wrench.js Documentation</title>
+	
+	{+includeTemplate("static/head.html")+}
+</head>
+<body>
+	{+includeTemplate("static/sidebar.html")+}
+	
+	<div id=content>
+		<h1>Class Index</h1>
+		
+		<for each="thisClass" in="data">
+		<if test="thisClass.methods.length + thisClass.properties.length !== 0">
+		<div>
+			<h2>{+(new Link().toSymbol(thisClass.alias.replace(/^_global_$/, 'global')))+}</h2>
+			{+resolveLinks(summarize(thisClass.classDesc))+}
+		</div>
+		<hr>
+		</if>
+		</for>
+		
+	</div>
+	
+	{+includeTemplate("static/footer.html")+}
+</body>
+</html>

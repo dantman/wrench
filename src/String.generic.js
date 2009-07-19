@@ -1,3 +1,7 @@
+/**
+ * @fileOverview This file contains generics for String methods
+ */
+
 (function fn(method) {
 	if(method in String) return fn;
 	String[method] = function(arr) {

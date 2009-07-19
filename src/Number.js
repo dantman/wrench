@@ -1,9 +1,17 @@
 /**
- * Return a padded string for the number. By defeault this function zero fills.
+ * @fileOverview This file contains new methods for the Number class
+ */
+/**
+ * @name Number
+ * @class A built-in class for numeric data which handles integers and floats within itself.
+ */
+
+/**
+ * Return a padded string for the number.
  * 
- * @param len The minimum lenght of the string to return
- * @param chars Characters to use when padding the number, defaulting to zero padding
- * @param radix An optional radix to use when turning the number into a string
+ * @param {Number} len The minimum length of the string to return
+ * @param {String} [chars="0"] Characters to use when padding the number
+ * @param [radix=10] The radix to use when turning the number into a string
  */
 Number.prototype.pad = function pad(len, chars, radix) {
 	return this.toString(radix || 10).padLeft(len || 0, chars || "0");

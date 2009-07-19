@@ -1,8 +1,7 @@
 SRC_DIR = src
 BUILD_DIR = build
-
-PREFIX = .
-DIST_DIR = ${PREFIX}/dist
+DOC_DIR = doc
+DIST_DIR = dist
 
 FILES_TOP = ${SRC_DIR}/top.txt\
 	${SRC_DIR}/Object.js\
@@ -83,3 +82,11 @@ clean:
 	@@rm -rf ${DIST_DIR}
 	@@echo
 
+docs:
+	-rm -r ${DOC_DIR}
+	java -jar ${BUILD_DIR}/jsdoc-toolkit/jsrun.jar ${BUILD_DIR}/jsdoc-toolkit/app/run.js\
+		-allfunctions \
+		-d=${DOC_DIR}/ \
+		-t=${BUILD_DIR}/template \
+		-D=rev:`git rev-parse --verify HEAD` \
+		-E=Array.new.js ${SRC_DIR}/

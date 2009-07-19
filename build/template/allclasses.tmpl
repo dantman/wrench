@@ -1,0 +1,19 @@
+		<h5>Indexes</h5>
+		<ul>
+			<li>{+new Link().toFile("index.html").withText("Class Index")+}</li>
+			<li>{+new Link().toFile("files.html").withText("File Index")+}</li>
+		</ul>
+		<h5>Classes</h5>
+		<ul class="classList">
+			<for each="thisClass" in="data">
+			<li>{!
+				if (thisClass.alias == "_global_") {
+					if ( thisClass.methods.length + thisClass.properties.length !== 0 )
+						output += "<i>"+new Link().toClass('global')+"</i>";
+				}
+				else {
+					output += new Link().toClass(thisClass.alias);
+				}
+			!}</li>
+			</for>
+		</ul>
