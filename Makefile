@@ -14,20 +14,23 @@ FILES15 = ${FILES_TOP}\
 	${SRC_DIR}/Array16.js\
 	${SRC_DIR}/Array18.js\
 	${SRC_DIR}/Array.js\
-	${SRC_DIR}/Array.old.js
+	${SRC_DIR}/Array.old.js\
+	${SRC_DIR}/Functions.browser.js
 
 FILES17 = ${FILES_TOP}\
 	${SRC_DIR}/Array18.js\
 	${SRC_DIR}/Array.js\
 	${SRC_DIR}/Array.old.js\
 	${SRC_DIR}/Array.iterator.js\
-	${SRC_DIR}/Getters.js
+	${SRC_DIR}/Getters.js\
+	${SRC_DIR}/Functions.js
 
 FILES18 = ${FILES_TOP}\
 	${SRC_DIR}/Array.js\
 	${SRC_DIR}/Array.new.js\
 	${SRC_DIR}/Array.iterator.js\
-	${SRC_DIR}/Getters.js
+	${SRC_DIR}/Getters.js\
+	${SRC_DIR}/Functions.js
 
 WRENCH15 = ${DIST_DIR}/wrench15.js
 WRENCH17 = ${DIST_DIR}/wrench17.js
