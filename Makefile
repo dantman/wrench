@@ -52,18 +52,21 @@ min: ${WRENCH15_MIN}
 ${DIST_DIR}:
 	@@mkdir -p ${DIST_DIR}
 
+wrench15: ${WRENCH15}
 ${WRENCH15}: ${DIST_DIR} ${FILES15}
 	@@echo -n "Building" ${WRENCH15}
 	@@cat ${FILES15} | ${VER15} | ${VER} > ${WRENCH15};
 	@@echo " - Done"
 	@@echo
 
+wrench17: ${WRENCH17}
 ${WRENCH17}: ${DIST_DIR} ${FILES17}
 	@@echo -n "Building" ${WRENCH17}
 	@@cat ${FILES17} | ${VER17} | ${VER} > ${WRENCH17};
 	@@echo " - Done"
 	@@echo
 
+wrench18: ${WRENCH18}
 ${WRENCH18}: ${DIST_DIR} ${FILES18}
 	@@echo -n "Building" ${WRENCH18}
 	@@cat ${FILES18} | ${VER18} | ${VER} > ${WRENCH18};
