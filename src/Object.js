@@ -21,8 +21,34 @@ Object.invert = function invert(obj) {
 	return o;
 };
 
+/**
+ * Merges multiple objects together into the first object with a right dominant pattern.
+ * This will modify the first object and override methods with the rightmost value.
+ * 
+ * This method returns the object that was modified, so if you would like a new
+ * object instead of one of your objects being overwritten use `Object.merge({}, ...);`
+ * 
+ * @param {Boolean} [deep=false] Use a deep object merge
+ * @param {Object} ... Objects to merge
+ * @return {Object} The first object passed to merge
+ */
 Object.merge = function merge() {
-	
+	var a = Array.slice(arguments), left, deep = false;
+	if ( typeof a[0] === 'boolean' )
+		deep = a.shift();
+	left = a.shift();
+	if ( left === null || typeof left !== 'object' )
+		throw new TypeError();
+	for ( var i = 0, l = a.length; i<l; i++ ) {
+		var right = a[i];
+		for ( var key in right )
+			if ( right.hasOwnProperty(key) )
+				if ( deep && isObject(left[key]) && isObject(right[key]) )
+					left[key] = merge( left[key], right[key] );
+				else
+					left[key] = right[key];
+	}
+	return left;
 };
 
 /**
