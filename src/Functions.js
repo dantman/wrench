@@ -17,7 +17,7 @@ function isArray(arr) {
 }
 
 function isObject(obj) {
-	return Object.getPrototypeOf(obj) === Object.prototype;
+	return obj !== null && typeof obj === 'object' && Object.getPrototypeOf(obj) === Object.prototype;
 }
 
 function isFunction(fn) {
