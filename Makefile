@@ -8,8 +8,8 @@ FILES_TOP = ${SRC_DIR}/top.txt\
 	${SRC_DIR}/Number.js\
 	${SRC_DIR}/Math.js\
 	${SRC_DIR}/String.generic.js\
-	${SRC_DIR}/Array.generic.js
-	${SRC_DIR}/String.js\
+	${SRC_DIR}/Array.generic.js\
+	${SRC_DIR}/String.js
 
 FILES15 = ${FILES_TOP}\
 	${SRC_DIR}/Array16.js\
