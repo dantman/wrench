@@ -1,24 +1,24 @@
 (function(toString) {
 	
-	function isString(str) {
+	window.isString = function isString(str) {
 		return typeof str === 'string' || toString(str) === '[object String]';
-	}
+	};
 
-	function isNumber(num) {
+	window.isNumber = function isNumber(num) {
 		return typeof num === 'number' || toString(num) === '[object Number]';
-	}
+	};
 
-	function isArray(arr) {
+	window.isArray = function isArray(arr) {
 		return toString(arr) === '[object Array]';
-	}
+	};
 
-	function isObject(obj) {
+	window.isObject = function isObject(obj) {
 		return toString(obj) === '[object Object]';
-	}
+	};
 
-	function isFunction(fn) {
+	window.isFunction = function isFunction(fn) {
 		return toString(fn) === '[object Function]';
-	}
+	};
 	
 })(Object.prototype.toString);
 
