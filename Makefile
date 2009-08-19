@@ -97,3 +97,7 @@ docs:
 		-t=${BUILD_DIR}/template \
 		-D=rev:`git rev-parse --verify HEAD` \
 		-E=Array.new.js ${SRC_DIR}/
+
+test: all
+	cd test; java -jar ../build/js.jar clitest.js
+
