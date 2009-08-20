@@ -293,7 +293,7 @@ String.prototype.scan = function scan(regex, offset) {
  * @return {String} The new cammel case style string
  */
 String.prototype.toCamelCase = function toCamelCase() {
-	return this.replace(/[-_][a-z]/g, function(i) { return i[1].toUpperCase(); });
+	return this.replace(/[-_][a-z]/g, function(i) { return i.charAt(1).toUpperCase(); });
 };
 
 /**
