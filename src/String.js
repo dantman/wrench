@@ -302,7 +302,7 @@ String.prototype.toCamelCase = function toCamelCase() {
  * @return {String} The new underscore style string
  */
 String.prototype.toUnderscore = function toUnderscore() {
-	return this.replace(/[A-Z]/, function(i) { return '_' + i.toLowerCase(); });
+	return this.replace(/[A-Z]/g, function(i) { return '_' + i.toLowerCase(); });
 };
 
 /**
@@ -311,6 +311,6 @@ String.prototype.toUnderscore = function toUnderscore() {
  * @return {String} The new dash style string
  */
 String.prototype.toDash = function toDash() {
-	return this.replace(/[A-Z]/, function(i) { return '-' + i.toLowerCase(); });
+	return this.replace(/[A-Z]/g, function(i) { return '-' + i.toLowerCase(); });
 };
 
