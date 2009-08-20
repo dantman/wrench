@@ -198,7 +198,9 @@ String.prototype.stripRight = function stripRight(chars) {
  * @param {String} [chars=" "] The characters to pad the string with
  */
 String.prototype.pad = function pad(len, chars) {
-	return this.padLeft(Math.floor(len/2), chars).padRight(Math.ceil(len/2), chars);
+	chars = chars || ' ';
+	var expand = Math.max(0, len - this.length);
+	return chars.expand(Math.floor(expand/2)) + this + chars.expand(Math.ceil(expand/2));
 };
 
 /**
@@ -220,7 +222,7 @@ String.prototype.padLeft = function padLeft(len, chars) {
  * @param {Number} len The length to pad the string to
  * @param {String} [chars=" "] The characters to pad the string with
  */
-String.prototype.padRight = function padRight() {
+String.prototype.padRight = function padRight(len, chars) {
 	chars = chars || ' ';
 	return this + chars.expand(Math.max(0, len - this.length));
 };
