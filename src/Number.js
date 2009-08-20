@@ -13,7 +13,8 @@
  * @param {String} [chars="0"] Characters to use when padding the number
  * @param [radix=10] The radix to use when turning the number into a string
  */
-Number.prototype.pad = function pad(len, chars, radix) {
+Number.prototype.pad =
+Number.prototype.padLeft = function pad(len, chars, radix) {
 	return this.toString(radix || 10).padLeft(len || 0, chars || "0");
 };
 
