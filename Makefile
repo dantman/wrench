@@ -1,7 +1,7 @@
-SRC_DIR = src
-BUILD_DIR = build
-DOC_DIR = doc
-DIST_DIR = dist
+SRC_DIR = ./src
+BUILD_DIR = ./build
+DOC_DIR = ./doc
+DIST_DIR = ./dist
 
 FILES_TOP = ${SRC_DIR}/top.txt\
 	${SRC_DIR}/Object.js\
@@ -46,6 +46,9 @@ VER17 = sed s/@JSVER/1.7/
 VER18 = sed s/@JSVER/1.8/
 
 MINJAR = java -jar ${BUILD_DIR}/yuicompressor-2.4.2.jar
+
+TAR_NAME = wrench-${WRENCH_VER}.tar.gz
+ZIP_NAME = wrench-${WRENCH_VER}.zip
 
 all: wrench min
 	@@echo "Wrench build complete."
@@ -98,6 +101,35 @@ docs:
 		-D=rev:`git rev-parse --verify HEAD` \
 		-E=Array.new.js ${SRC_DIR}/
 
-test: all
+runtests: all
 	cd test; java -jar ../build/js.jar clitest.js
+
+# Distribution
+${DIST_DIR}/build: ${DIST_DIR}
+	-@@mkdir ${DIST_DIR}/build
+
+${DIST_DIR}/src: ${DIST_DIR}
+	-@@mkdir ${DIST_DIR}/src
+${DIST_DIR}/src/*: ${DIST_DIR}/src ${SRC_DIR}/*
+	@@cp ${SRC_DIR}/* ${DIST_DIR}/src/
+${DIST_DIR}/build/js.jar: ${DIST_DIR}/build ${BUILD_DIR}/js.jar
+	@@cp ${BUILD_DIR}/js.jar ${DIST_DIR}/build/
+${DIST_DIR}/build/yuicompressor-2.4.2.jar: ${DIST_DIR}/build ${BUILD_DIR}/yuicompressor-2.4.2.jar
+	@@cp ${BUILD_DIR}/yuicompressor-2.4.2.jar ${DIST_DIR}/build/
+${DIST_DIR}/Makefile: ./Makefile
+	@@cp ./Makefile ${DIST_DIR}
+${DIST_DIR}/README: ./README
+	@@cp ./README ${DIST_DIR}
+${DIST_DIR}/version.txt: ./version.txt
+	@@cp ./version.txt ${DIST_DIR}
+${DIST_DIR}/test: ./test ./test/* ./test/tests/*
+	@@cp -r ./test ${DIST_DIR}
+${DIST_DIR}/doc: docs
+	@@cp -r ${DOC_DIR} ${DIST_DIR}
+
+# Note: doc/ is not yet ready for packaging. It uses absolute references to monkeyscript.org for some static components.
+build-dist: all ${DIST_DIR}/src/* ${DIST_DIR}/build/js.jar ${DIST_DIR}/build/yuicompressor-2.4.2.jar ${DIST_DIR}/Makefile ${DIST_DIR}/README ${DIST_DIR}/version.txt ${DIST_DIR}/test ${DIST_DIR}/doc
+	@@cd ${DIST_DIR}; tar -czf ${TAR_NAME} --exclude=${TAR_NAME} --exclude=${ZIP_NAME} *
+	@@cd ${DIST_DIR}; zip -rqn ".jar" ${ZIP_NAME} . -x ${TAR_NAME} -x ${ZIP_NAME}
+	@@echo "Wrench distribution build complete."
 

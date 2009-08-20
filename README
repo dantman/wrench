@@ -1,3 +1,41 @@
+Wrench (aka: MonkeyScript Wrench)
+=================================
+Wrench.js is a JavaScript environment which bridges across server-side
+and browser-side JavaScript,it serves as the base for MonkeyScript's stdlib.
+
+The project provides Array and String prototypes which fill in the gap of
+missing array and string manipulation methods in JavaScript,
+as well as a few extra helpers.
+
+Wrench: http://wrench.monkeyscript.org/
+MonkeyScript: http://monkeyscript.org/
+
+Use
+---
+The file to use depends on where you intend to use Wrench.js and what version of
+JavaScript the interpreter you are running supports.
+
+For those using Wrench.js in the browser you want the 15 version which stands for
+JavaScript 1.5, this version of JavaScript is the one spread over the web and
+supported, it's based on ECMAScript version 3. You can include either wrench15.js
+or for production systems you can include the minified version wrench15.min.js
+
+For those using Rhino you are likely using the version that supports JavaScript 1.7
+as at the time of writing Rhino's 1.8 support is not complete. What to use depends
+on how you are using Rhino. If you are just using the default you should include
+wrench15.js as the default does not have the important JavaScript 1.7 features
+like `let` enabled. However if you are using the -version 170 argument or specifying
+VERSION_1_7 to your JavaScript contexts you can instead include wrench17.js for
+the added JavaScript 1.7 features.
+
+For those using SpiderMonkey/TraceMonkey you have wider support. If you are using
+a SpiderMonkey 1.7 release you follow the same guide as Rhino users if you are building
+SpiderMonkey 1.8 yourself and using the flag to enable JavaScript 1.8 then you can
+include wrench18.js to get the full range of supported features.
+
+For those server-side using any other interpter, your engine likely only supports
+JavaScript 1.5 and thus you should include wrench15.js.
+
 Directory structure
 -------------------
 
@@ -6,6 +44,7 @@ Directory structure
     version.txt : Static version file used when building the project
     Makefile    : Project makefile for building the project
     build/ : Libraries used for building
+         |- js.jar : Rhino 1.7 for running most of the tests
          |- yuicompressor-2.4.2.jar : YUI Compressor for minification of code
          `
     src/ : Source files
@@ -24,7 +63,7 @@ Directory structure
        |- String.generic.js : String generics
        |- Getters.js        : Extra getters which require JS 1.7
        `
-    dist/ : Not part of the repo, these are created when the project is built
+    dist/ : Not part of the repo, these are created when the project is built, these are located in the root in releases
         |- wrench15.js     : Wrench.js file for JS 1.5 (ie: Browsers)
         |- wrench15.min.js : Minified version of wrench15.js for production use on the web
         |- wrench17.js     : Wrench.js file for JS 1.7 (ie: Rhino 1.7 and Spidermonkey 1.7)
