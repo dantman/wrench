@@ -14,7 +14,7 @@
  * @return {String} the repeated string
  */
 String.prototype.repeat = function repeat(num, separator) {
-	return Array.fill(num||1, this).join(separator||'');
+	return Array.fill(typeof num === 'number' ? num : 1, this).join(separator||'');
 };
 
 /**
