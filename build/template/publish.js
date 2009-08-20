@@ -126,6 +126,8 @@ function publish(symbolSet) {
 	IO.copyFile(publish.conf.templatesDir+"static/skin.css", publish.conf.outDir);
 	IO.copyFile(publish.conf.templatesDir+"static/small.css", publish.conf.outDir);
 	IO.mkPath((publish.conf.outDir+'img').split("/"));
+	IO.copyFile(publish.conf.templatesDir+"static/img/page-fade.png", publish.conf.outDir+'img/');
+	IO.copyFile(publish.conf.templatesDir+"static/img/portal-break.png", publish.conf.outDir+'img/');
 	IO.copyFile(publish.conf.templatesDir+"static/img/github.png", publish.conf.outDir+'img/');
 	IO.copyFile(publish.conf.templatesDir+"static/img/googlegroup.png", publish.conf.outDir+'img/');
 	IO.copyFile(publish.conf.templatesDir+"static/img/link_icon.gif", publish.conf.outDir+'img/');
