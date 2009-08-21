@@ -250,7 +250,7 @@ String.prototype.partition = function partition(sep) {
 	
 	return i > -1 ?
 		[ this.substr(0, i), sep, this.substr(i+l) ] :
-		[ this, '', '' ];
+		[ this.toString(), '', '' ];
 };
 
 /**
@@ -264,7 +264,7 @@ String.prototype.partitionRight = function partitionRight(sep) {
 	var i = this.lastIndexOf(sep);
 	return i > -1 ?
 		[ this.substr(0, i), sep, this.substr(i+sep.length) ] :
-		[ '', '', this ];
+		[ '', '', this.toString() ];
 };
 
 String.prototype.explode = function explode(sep, limit) {
