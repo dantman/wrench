@@ -41,12 +41,17 @@ Object.merge = function merge() {
 		throw new TypeError();
 	for ( var i = 0, l = a.length; i<l; i++ ) {
 		var right = a[i];
-		for ( var key in right )
-			if ( right.hasOwnProperty(key) )
-				if ( deep && isObject(left[key]) && isObject(right[key]) )
-					left[key] = merge( left[key], right[key] );
-				else
+		for ( var key in right ) {
+			if ( right.hasOwnProperty(key) ) {
+				if ( deep && isObject(right[key]) ) {
+					if ( !isObject(left[key]) )
+						left[key] = {};
+					left[key] = merge( true, left[key], right[key] );
+				} else {
 					left[key] = right[key];
+				}
+			}
+		}
 	}
 	return left;
 };

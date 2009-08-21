@@ -77,6 +77,10 @@ Array.prototype.item = function item(i) {
  * @param {Number} [max=1] The max number of items to remove, use Infinity to remove them all
  */
 Array.prototype.remove = function remove(item, max) {
+	if ( max === 0 )
+		return;
+	if ( max === -1 )
+		max = Infinity;
 	max = max || 1;
 	while(max) {
 		var i = this.indexOf(item);
@@ -104,11 +108,12 @@ Array.prototype.clear = function clear() {
 };
 
 /**
- * Clean out all undefined and null values inside of an array
+ * Return a new array clean of all undefined and null values inside of an array
  * if false is passed to empty then only undefined items are cleaned
  * if true is passed to empty then empty strings will also be cleaned
  * 
  * @param {Boolean} [empty=undefined] Whether to also clean out empty strings or to not clear out nulls
+ * @return {Array} The new array
  */
 Array.prototype.clean = function clean(empty) {
 	return this.filter(function(item) {

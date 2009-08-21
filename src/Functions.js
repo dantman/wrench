@@ -21,6 +21,6 @@ function isObject(obj) {
 }
 
 function isFunction(fn) {
-	return typeof fn === 'function';
+	return typeof fn === 'function' && Object.getPrototypeOf(fn) === Function.prototype;
 }
 

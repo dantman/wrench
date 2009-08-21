@@ -271,6 +271,17 @@ String.prototype.explode = function explode(sep, limit) {
 	
 };
 
+/**
+ * Search through a string starting at an offset and collect all the matches
+ * to that regex into an array.
+ * Using a normal regex this returns an array of strings
+ * If the regex contains groups then instead it returns an array of arrays
+ * containing the groups.
+ * 
+ * @param {RegExp} regex Regular expression to scan over the string with
+ * @param {Number} [offset=0] Offset to start at.
+ * @return {Array} List of matches
+ */
 String.prototype.scan = function scan(regex, offset) {
 	var m, list = [];
 	offset = offset || 0;
@@ -280,7 +291,7 @@ String.prototype.scan = function scan(regex, offset) {
 			list.push( m.length > 1 ? m.slice(1) : m[0] );
 	} else {
 		while( m = this.substr(offset).match(regex) ) {
-			offset = m.index + m[0].length;
+			offset += m.index + m[0].length;
 			list.push( m.length > 1 ? m.slice(1) : m[0] );
 		}
 	}
