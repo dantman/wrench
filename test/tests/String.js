@@ -35,7 +35,12 @@ exports["string.toFirstLowerCase"] = function() {
 };
 
 exports["string.toTitleCase"] = function() {
-	pending();
+	assert("Foo".toTitleCase() === "Foo", "Does not pass through proper strings");
+	assert("foo".toTitleCase() === "Foo");
+	assert("fOO".toTitleCase() === "FOO", "Mangles case");
+	assert("foo bar".toTitleCase() === "Foo Bar", "Fails on multiple words (likely missing /g)");
+	assert("foo-bar".toTitleCase() === "Foo-Bar", "Fails on dash");
+	assert("foo\t\nbar".toTitleCase() === "Foo\t\nBar", "Fails on non-space whitespace");
 };
 
 exports["string.startsWith"] = function() {
@@ -55,11 +60,18 @@ exports["string.endsWith"] = function() {
 };
 
 exports["string.contains"] = function() {
-	pending();
+	assert("foobarbaz".contains("bar"), "Does not match proper comparisons");
+	assert.not("foobarbaz".contains("me"), "False positives");
+	assert("foobarbaz".contains("baz"), "Fails on end of string match");
+	assert("foobarbaz".contains("foo"), "Fails on start of string match");
 };
 
 exports["string.numberOf"] = function() {
-	pending();
+	assert("abcdabaz".numberOf("c") === 1);
+	assert("abcdabaz".numberOf("e") === 0, "Fails on not-found");
+	assert("abcdabaz".numberOf("b") === 2, "Fails on more than 1");
+	assert("abcdabaz".numberOf("z") === 1, "Fails on end of string match");
+	assert("abcdabaz".numberOf("a") === 3, "Fails on start of string match");
 };
 
 exports["string.reverse"] = function() {
@@ -93,43 +105,66 @@ exports["string.trim"] = function() {
 };
 
 exports["string.strip"] = function() {
-	pending();
+	assert("__asdfqwerty__".strip("_") === "asdfqwerty");
 };
 
 exports["string.stripLeft"] = function() {
-	pending();
+	assert("__asdfqwerty__".stripLeft("_") === "asdfqwerty__");
 };
 
 exports["string.stripRight"] = function() {
-	pending();
+	assert("__asdfqwerty__".stripRight("_") === "__asdfqwerty");
 };
 
 exports["string.pad"] = function() {
-	pending();
+	assert("asdf".pad(2) === "asdf", "Mangles padding strings larger than pad length");
+	assert("asdf".pad(10) === "   asdf   ");
+	assert("asdf".pad(10, "@") === "@@@asdf@@@", "Fails with character list");
+	assert("asdf".pad(8, "@!") === "@!asdf@!", "Fails with multi-character list");
+	assert("asdf".pad(7, "@!") === "@asdf@!", "Outputs incorrectly on pad lengths which create odd number of characters to pad");
 };
 
 exports["string.padLeft"] = function() {
-	pending();
+	assert("asdf".padLeft(2) === "asdf", "Mangles padding strings larger than pad length");
+	assert("asdf".padLeft(10) === "      asdf");
+	assert("asdf".padLeft(10, "@") === "@@@@@@asdf", "Fails with character list");
+	assert("asdf".padLeft(10, "@!") === "@!@!@!asdf", "Fails with multi-character list");
+	assert("asdf".padLeft(7, "@!") === "@!@asdf", "Outputs incorrectly on pad lengths which create odd number of characters to pad");
 };
 
 exports["string.padRight"] = function() {
-	pending();
+	assert("asdf".padRight(2) === "asdf", "Mangles padding strings larger than pad length");
+	assert("asdf".padRight(10) === "asdf      ");
+	assert("asdf".padRight(10, "@") === "asdf@@@@@@", "Fails with character list");
+	assert("asdf".padRight(10, "@!") === "asdf@!@!@!", "Fails with multi-character list");
+	assert("asdf".padRight(7, "@!") === "asdf@!@", "Outputs incorrectly on pad lengths which create odd number of characters to pad");
 };
 
 exports["string.partition"] = function() {
-	pending();
+	assert.match("foo=bar=baz".partition("="), ["foo", "=", "bar=baz"], "Fails on partition");
+	assert.match("foo-bar-baz".partition("="), ["foo-bar-baz", "", ""], "Fails on no partition");
 };
 
 exports["string.partitionRight"] = function() {
-	pending();
+	assert.match("foo=bar=baz".partitionRight("="), ["foo=bar", "=", "baz"], "Fails on partition");
+	assert.match("foo-bar-baz".partitionRight("="), ["", "", "foo-bar-baz"], "Fails on no partition");
 };
 
 exports["string.explode"] = function() {
-	pending();
+	var str = "foo,bar,baz";
+	assert.match(str.explode(','), str.split(','), "Explode with no limit does not give same output as .split");
+	assert.match(str.explode(',', 2), ["foo","bar,baz"]);
 };
 
 exports["string.scan"] = function() {
-	pending();
+	assert.match("foo bar baz".scan(/\w+/), ["foo","bar","baz"]);
+	assert.match("foo bar baz".scan(/\w+/, 4), ["bar","baz"], "Fails on offset");
+	var s = "foo1 bar2 baz3".scan(/(\w+)(\d)/);
+	assert.match(s[0], ["foo","1"], "Fails on groups");
+	assert.match(s[1], ["bar","2"], "Fails on groups");
+	assert.match(s[2], ["baz","3"], "Fails on groups");
+	assert("foo bar baz".scan(/(\w+)/)[0], ["foo"], "Fails on single group");
+	assert("foo bar baz".scan(/(\w+)/g)[0], ["foo"], "Fails on offset using groups");
 };
 
 exports["string.toCamelCase"] = function() {
@@ -143,10 +178,16 @@ exports["string.toCamelCase"] = function() {
 };
 
 exports["string.toUnderscore"] = function() {
-	pending();
+	assert("underscore_string".toUnderscore() === "underscore_string", "Does not pass through existing undescore_strings");
+	assert("camelCase".toUnderscore() === "camel_case", "Failes on camelCase");
+	assert("camelCaseExtend".toUnderscore() === "camel_case_extend", "Fails with more than one hump (missing /g likely)");
+	assert("TitleCase".toUnderscore() === "_title_case", "Failes on TitleCase");
 };
 
 exports["string.toDash"] = function() {
-	pending();
+	assert("dash-string".toDash() === "dash-string", "Does not pass through existing dash-strings");
+	assert("camelCase".toDash() === "camel-case", "Failes on camelCase");
+	assert("camelCaseExtend".toDash() === "camel-case-extend", "Fails with more than one hump (missing /g likely)");
+	assert("TitleCase".toDash() === "-title-case", "Failes on TitleCase");
 };
 

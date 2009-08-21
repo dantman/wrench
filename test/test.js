@@ -22,27 +22,32 @@ function assert(ok, message) {
 assert.not = function(nok, message) {
 	assert(!nok, message);
 };
-assert.match = function(a, b, message) {
-	// b is the hard test, a should match it
-	if ( b instanceof Array ) {
-		if(!(a instanceof Array))
-			assert(false, message);
-		if( b.length !== a.length )
-			assert(false, message);
-		for ( var i = 0; i < b.length; i++ )
-			if ( a[i] !== b[i] )
+assert.matchOne = function(a, bs, message) {
+	for ( var i = 0; i < bs.length; i++ ) {
+		var b = bs[i];
+		// b is the hard test, a should match it
+		if ( b instanceof Array ) {
+			if(!(a instanceof Array))
 				assert(false, message);
-		assert(true, message);
-	} else {
-		if( a instanceof Array )
-			assert(false, message);
-		for ( var k in b ) {
-			if ( a.hasOwnProperty(k) && a[k] === b[k] )
-				continue;
-			assert(false, message);
+			if( b.length !== a.length )
+				assert(false, message);
+			for ( var i = 0; i < b.length; i++ )
+				if ( a[i] !== b[i] )
+					assert(false, message);
+		} else {
+			if( a instanceof Array )
+				assert(false, message);
+			for ( var k in b ) {
+				if ( a.hasOwnProperty(k) && a[k] === b[k] )
+					continue;
+				assert(false, message);
+			}
 		}
-		assert(true, message);
 	}
+	assert(true, message);
+};
+assert.match = function(a, b, message) {
+	assert.matchOne(a, [b], message);
 };
 function pending() {
 	throw new PendingError("Pending");

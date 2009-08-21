@@ -1,11 +1,6 @@
 
-load("./test.js");
-load("../dist/wrench15.js");
-
-print("Running tests for wrench15...");
-
 var noRun = 0, noPassed = 0, noFailed = 0, noPending = 0;
-var roots = ["Object", "Array", "String"];
+var roots = ["Object", "Array", "String", "Number", "Math", "Functions"];
 for ( var t = 0; t < roots.length; t++ ) {
 	var testRoot = roots[t];
 	print("Running tests/"+testRoot+".js");
