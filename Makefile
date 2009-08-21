@@ -101,8 +101,11 @@ docs:
 		-D=rev:`git rev-parse --verify HEAD` \
 		-E=Array.new.js ${SRC_DIR}/
 
-runtests: all
-	cd test; java -jar ../build/js.jar clitest.js
+test15: all
+	cd test; java -jar ../build/js.jar test15.js
+
+test17: all
+	cd test; java -jar ../build/js.jar -version 170 test17.js
 
 # Distribution
 ${DIST_DIR}/build: ${DIST_DIR}
