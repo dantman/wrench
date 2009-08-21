@@ -92,7 +92,7 @@ String.prototype.contains = function contains(other) {
 String.prototype.numberOf = function numberOf(other, offset) {
 	offset = offset || 0;
 	var i, c = 0;
-	while( (i = this.indexOf(other, offset)) && i >= 0 ) {
+	while( (i = this.indexOf(other, offset)) >= 0 ) {
 		c++;
 		offset = i + other.length;
 	}
