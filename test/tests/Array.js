@@ -110,7 +110,7 @@ exports["array.shuffle"] = function() {
 	var arr = "abcdefghijklmnopqrstuvwxyz".split(''); // this has to be large to avoid getting the same array via .rand
 	var rand = arr.slice();
 	assert(rand.shuffle() === rand, "Does not return the same array");
-	assert.match(rand, arr, "Did not randomize (double check, there is a slim chance randomness could have returned the same array");
+	assert.nomatch(rand, arr, "Did not randomize (double check, there is a slim chance randomness could have returned the same array");
 };
 
 exports["array.append"] = function() {

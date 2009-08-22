@@ -22,6 +22,33 @@ function assert(ok, message) {
 assert.not = function(nok, message) {
 	assert(!nok, message);
 };
+assert.noMatchOne = function(a, bs, message) {
+	next:
+	for ( var i = 0; i < bs.length; i++ ) {
+		var b = bs[i];
+		// b is the hard test, a should match it
+		if ( b instanceof Array ) {
+			if(!(a instanceof Array))
+				assert(false, message);
+			if( b.length !== a.length )
+				continue;
+			for ( var i = 0; i < b.length; i++ ) {
+				if ( a[i] !== b[i] )
+					continue next;
+			}
+			assert(false, message);
+		} else {
+			if( a instanceof Array )
+				assert(false, message);
+			for ( var k in b ) {
+				if ( a.hasOwnProperty(k) && a[k] !== b[k] )
+					continue next;
+				assert(false, message);
+			}
+		}
+	}
+	assert(true, message);
+};
 assert.matchOne = function(a, bs, message) {
 	for ( var i = 0; i < bs.length; i++ ) {
 		var b = bs[i];
@@ -48,6 +75,9 @@ assert.matchOne = function(a, bs, message) {
 };
 assert.match = function(a, b, message) {
 	assert.matchOne(a, [b], message);
+};
+assert.nomatch = function(a, b, message) {
+	assert.noMatchOne(a, [b], message);
 };
 function pending() {
 	throw new PendingError("Pending");
