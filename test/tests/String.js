@@ -153,7 +153,13 @@ exports["string.partitionRight"] = function() {
 exports["string.explode"] = function() {
 	var str = "foo,bar,baz";
 	assert.match(str.explode(','), str.split(','), "Explode with no limit does not give same output as .split");
-	assert.match(str.explode(',', 2), ["foo","bar,baz"]);
+	assert.match(str.explode(',', 2), ["foo","bar,baz"], "Fails with limit");
+	assert.match(str.explode(',', 3), ["foo","bar", "baz"], "Fails with even limit");
+	assert.match(str.explode(',', 4), ["foo","bar", "baz"], "Fails with limit over the number of items");
+	//var str = ".asdf.asdf.asdf";
+	//assert.match(str.explode(/./), ["", "asdf", "asdf", "asdf"], "Fails on regex");
+	//assert.match(str.explode(/^./g), ["", "asdf.asdf.asdf"], "Fails on /g regex using ^");
+	//assert.match(str.explode(/^./), ["", "asdf.asdf.asdf"], "Fails on non-/g regex using ^");
 };
 
 exports["string.scan"] = function() {

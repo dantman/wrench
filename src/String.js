@@ -267,8 +267,34 @@ String.prototype.partitionRight = function partitionRight(sep) {
 		[ '', '', this.toString() ];
 };
 
+/**
+ * Split up a string by a separator.
+ * This behaves the same as .split when used without a limit. The difference
+ * between .split and .explode is that when used with a limit .split discards
+ * anything over the limit, and .explode leaves them intact within the last string
+ * 
+ * "foo,bar,baz".split(',', 2); // ["foo","bar"]
+ * "foo,bar,baz".explode(',', 2); // ["foo", "bar,baz"]
+ * @param {String} sep The separator to split by
+ * @param {Number} [limit=Infinity] The split limit
+ * @return {Array} The slitted array
+ */
 String.prototype.explode = function explode(sep, limit) {
-	
+	if ( !limit )
+		return this.split(sep);
+	// Next version we will support RegExp.
+	// Note that .split handles regex as if you always passed a /g to .match
+	//if ( sep instanceof RegExp ) {
+	//	sep = RegExp.rebuildFrom(sep, { global: true });
+	//} else {
+		var s = this.split(sep);
+		var ss = s.splice(0, limit);
+		if ( s.length ) {
+			var sss = ss.pop();
+			ss.push([sss].concat(s).join(sep));
+		}
+		return ss;
+	//}
 };
 
 /**
