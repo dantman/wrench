@@ -1,0 +1,102 @@
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+body {
+	line-height: 1;
+	color: black;
+	background: white;
+	font-size: 90%;
+}
+ol, ul {
+	list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+
+#results {
+	width: 100%;
+}
+
+#results .num { text-align: right }
+#results .m { text-align: center }
+#results .shrink { font-size: .75em; letter-spacing: -1px; }
+
+#results {
+	margin: 0;
+	background: #f9f9f9;
+	border: 1px #aaa solid;
+	border-collapse: collapse;
+	empty-cells:show;
+}
+
+#results td, #results th {
+	vertical-align: middle;
+	border: 1px #aaa solid;
+	border-top: none;
+	border-bottom: none;
+	padding: 2px;
+}
+
+#results thead th {
+	border: 1px #aaa solid;
+	padding: 0.2em 0.4em;
+}
+
+#results thead th, #results td.hl3, #results th.hl3 {
+	background: #8da7d6;
+	text-align: center;
+}
+#results tbody th {
+	text-align: left;
+}
+
+#results td.hl1, #results th.hl1 {
+	background: #c5d8fc;
+	text-align: center;
+}
+
+#results td.hl2, #results th.hl2 {
+	background: #a7c1f2;
+	text-align: center;
+}
+
+#results caption {
+	margin-left: inherit;
+	margin-right: inherit;
+	font-weight: bold;
+}
+
+.passed { background: #1f7 }
+.failed { background: #f77 }
+.pending { background: #ff7 }
+
