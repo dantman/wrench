@@ -134,5 +134,9 @@ ${DIST_DIR}/doc: docs
 build-dist: all ${DIST_DIR}/src/* ${DIST_DIR}/build/js.jar ${DIST_DIR}/build/yuicompressor-2.4.2.jar ${DIST_DIR}/Makefile ${DIST_DIR}/README ${DIST_DIR}/version.txt ${DIST_DIR}/test ${DIST_DIR}/doc
 	@@cd ${DIST_DIR}; tar -czf ${TAR_NAME} --exclude=${TAR_NAME} --exclude=${ZIP_NAME} *
 	@@cd ${DIST_DIR}; zip -rqn ".jar" ${ZIP_NAME} . -x ${TAR_NAME} -x ${ZIP_NAME}
+	@@- mv "${DIST_DIR}/wrench15.js" "${DIST_DIR}/wrench15-${WRENCH_VER}.js"
+	@@- mv "${DIST_DIR}/wrench15.min.js" "${DIST_DIR}/wrench15-${WRENCH_VER}.min.js"
+	@@- mv "${DIST_DIR}/wrench17.js" "${DIST_DIR}/wrench17-${WRENCH_VER}.js"
+	@@- mv "${DIST_DIR}/wrench18.js" "${DIST_DIR}/wrench18-${WRENCH_VER}.js"
 	@@echo "Wrench distribution build complete."
 
