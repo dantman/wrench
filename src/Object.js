@@ -75,13 +75,14 @@ Object.merge = function merge() {
  * @param {Object} obj The object to take keys from
  * @return {Array} The array of keys
  */
-Object.keys = function keys(obj) {
-	var keys = [];
-	for ( var k in obj )
-		if ( obj.hasOwnProperty( k ) )
-			keys.push( k );
-	return keys;
-};
+if ( !Object.keys )
+	Object.keys = function keys(obj) {
+		var keys = [];
+		for ( var k in obj )
+			if ( obj.hasOwnProperty( k ) )
+				keys.push( k );
+		return keys;
+	};
 
 /**
  * Return an array containing the list of values within the object
@@ -89,11 +90,12 @@ Object.keys = function keys(obj) {
  * @param {Object} obj The object to take values from
  * @return {Array} The array of values
  */
-Object.values = function values(obj) {
-	var values = [];
-	for ( var k in obj )
-		if ( obj.hasOwnProperty( k ) )
-			values.push( obj[k] );
-	return values;
-};
+if ( !Object.values )
+	Object.values = function values(obj) {
+		var values = [];
+		for ( var k in obj )
+			if ( obj.hasOwnProperty( k ) )
+				values.push( obj[k] );
+		return values;
+	};
 
