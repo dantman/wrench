@@ -29,7 +29,8 @@ Object.invert = function invert(obj) {
  * object instead of one of your objects being overwritten use `Object.merge({}, ...);`
  * 
  * @param {Boolean} [deep=false] Use a deep object merge
- * @param {Object} ... Objects to merge
+ * @param {Object} obj Object to merge into
+ * @param {Object} ...objs Objects to merge into obj
  * @return {Object} The first object passed to merge
  */
 Object.merge = function merge() {

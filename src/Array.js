@@ -137,7 +137,7 @@ Array.prototype.rand = function() {
  * A version of array.reduce() which only passes the two values to reduce on
  * to the callback so you can use native methods like Math.max inside a reduce.
  * 
- * @param Function fn The callback function
+ * @param {Function} fn The callback function
  */
 Array.prototype.reduceNative = function reduceNative(fn) {
 	return this.reduce(function(a, b) { return fn(a, b); });
