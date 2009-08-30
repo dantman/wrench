@@ -5,6 +5,7 @@ DIST_DIR = ./dist
 
 FILES_TOP = ${SRC_DIR}/top.txt\
 	${SRC_DIR}/Object.js\
+	${SRC_DIR}/Function.js\
 	${SRC_DIR}/Number.js\
 	${SRC_DIR}/Math.js\
 	${SRC_DIR}/String.generic.js\
