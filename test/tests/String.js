@@ -188,6 +188,7 @@ exports["string.toUnderscore"] = function() {
 	assert("camelCase".toUnderscore() === "camel_case", "Failes on camelCase");
 	assert("camelCaseExtend".toUnderscore() === "camel_case_extend", "Fails with more than one hump (missing /g likely)");
 	assert("TitleCase".toUnderscore() === "_title_case", "Failes on TitleCase");
+	assert("_underscore_string".toCamelCase().toUnderscore() === "_underscore_string", "Breaks on round trip to camelCase.");
 };
 
 exports["string.toDash"] = function() {
@@ -195,5 +196,6 @@ exports["string.toDash"] = function() {
 	assert("camelCase".toDash() === "camel-case", "Failes on camelCase");
 	assert("camelCaseExtend".toDash() === "camel-case-extend", "Fails with more than one hump (missing /g likely)");
 	assert("TitleCase".toDash() === "-title-case", "Failes on TitleCase");
+	assert("-dash-string".toCamelCase().toDash() === "-dash-string", "Breaks on round trip to camelCase.");
 };
 
