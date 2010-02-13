@@ -1,0 +1,700 @@
+8
+
+dir
+12
+http://sputniktests.googlecode.com/svn/trunk/tests/Conformance/15_Native_ECMA_Script_Objects/15.9_Date_Objects/15.9.5_Properties_of_the_Date_Prototype_Object
+http://sputniktests.googlecode.com/svn
+
+
+
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+0941ce9a-398d-11de-82fb-7f665ef830f7
+
+15.9.5.36_Date.prototype.setDate
+dir
+
+15.9.5.1_Date.prototype.constructor
+dir
+
+15.9.5.26_Date.prototype.getTimezoneOffset
+dir
+
+15.9.5.23_Date.prototype.getUTCSeconds
+dir
+
+15.9.5.27_Date.prototype.setTime
+dir
+
+S15.9.5_A10_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+a3bae0bbf20de30a44f8ac23131770fe
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+S15.9.5_A12_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+352e164b78050816a7b6d97610f00a5b
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+S15.9.5_A31_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+0475c47bb80f8835325250501c404424
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+S15.9.5_A14_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+c38306cfa7671c9f106610d867ddfd3d
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+S15.9.5_A33_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+c092f12755463820f4cd7e833366e8cb
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+15.9.5.31_Date.prototype.setUTCSeconds
+dir
+
+S15.9.5_A16_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+914bf5aeed6ddde144ebc3dbebe58715
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+15.9.5.42_Date.prototype.toUTCString
+dir
+
+S15.9.5_A35_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+df2dc342c9b42c6044493a14d9544b7c
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+S15.9.5_A18_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+320bcd2a4cfde26be65e057b996b8ac2
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+S15.9.5_A37_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+01c13928cda7b941020e70579ff75ff0
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+S15.9.5_A39_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+fe561d4e348fbc0a294aac867c6fc5d2
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+15.9.5.38_Date.prototype.setMonth
+dir
+
+15.9.5.6_Date.prototype.toLocaleDateString
+dir
+
+15.9.5.5_Date.prototype.toLocaleString
+dir
+
+15.9.5.37_Date.prototype.setUTCDate
+dir
+
+15.9.5.41_Date.prototype.setUTCFullYear
+dir
+
+15.9.5.14_Date.prototype.getDate
+dir
+
+15.9.5.34_Date.prototype.setHours
+dir
+
+S15.9.5_A02_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+3cd821d3333084aba31e63b50fb00175
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+15.9.5.19_Date.prototype.getUTCHours
+dir
+
+S15.9.5_A21_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+1e5f8228b2060b91380cc635219b0e13
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+S15.9.5_A40_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+93490fd4b3ce6f44d8f5aeb31081e720
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+S15.9.5_A04_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+30ca28e3e1dd953bbb4c978d7d648e5b
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+S15.9.5_A23_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+1fdc595fe8095bebdb9a7e543839cca8
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+15.9.5.39_Date.prototype.setUTCMonth
+dir
+
+S15.9.5_A06_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+70946385ed9e0598031c96226510d156
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+S15.9.5_A42_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+b29aec9f251c5f00016decec56ac885c
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+S15.9.5_A25_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+1b6111f459fa25918eafd89018086303
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+15.9.5.2_Date.prototype.toString
+dir
+
+S15.9.5_A08_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+b82ef5fde4a09e0f2ebb9a98bc1eef69
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+S15.9.5_A27_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+d2634078f213e4955774073d24540f17
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+S15.9.5_A29_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+c08d4c8d903120c2867d41cf27de20db
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+15.9.5.35_Date.prototype.setUTCHours
+dir
+
+15.9.5.17_Date.prototype.getUTCDay
+dir
+
+15.9.5.21_Date.prototype.getUTCMinutes
+dir
+
+15.9.5.32_Date.prototype.setMinutes
+dir
+
+15.9.5.30_Date.prototype.setSeconds
+dir
+
+15.9.5.33_Date.prototype.setUTCMinutes
+dir
+
+15.9.5.10_Date.prototype.getFullYear
+dir
+
+15.9.5.20_Date.prototype.getMinutes
+dir
+
+S15.9.5_A11_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+3bb70acb6a1d88fbe414c5c62e9b3c42
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+15.9.5.9_Date.prototype.getTime
+dir
+
+S15.9.5_A30_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+222014bbd4bc31b58a04f2ed935e1493
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+15.9.5.12_Date.prototype.getMonth
+dir
+
+S15.9.5_A13_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+b9924b843c4da7f1383697f646629353
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+15.9.5.8_Date.prototype.valueOf
+dir
+
+S15.9.5_A32_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+52bb42791c455213c9bac35fc31a1771
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+S15.9.5_A15_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+b53a89adb56cb0abfe83b7e65b2d9130
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+15.9.5.24_Date.prototype.getMilliseconds
+dir
+
+S15.9.5_A34_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+c3641c26e738f6c59c7d4fe1598866ca
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+S15.9.5_A17_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+bcb1ff3b7a71d4e0f4b37d3cb3d4b987
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+S15.9.5_A36_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+892aa573be1a883c209e75f366ea58e2
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+S15.9.5_A19_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+0db46cf03fcfd2bf56515f5688929698
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+15.9.5.7_Date.prototype.toLocaleTimeString
+dir
+
+15.9.5.15_Date.prototype.getUTCDate
+dir
+
+S15.9.5_A38_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+6b053661d34ca1daa7cfd592426ad29d
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+15.9.5.22_Date.prototype.getSeconds
+dir
+
+15.9.5.40_Date.prototype.setFullYear
+dir
+
+15.9.5.13_Date.prototype.getUTCMonth
+dir
+
+15.9.5.25_Date.prototype.getUTCMilliseconds
+dir
+
+15.9.5.18_Date.prototype.getHours
+dir
+
+15.9.5.28_Date.prototype.setMilliseconds
+dir
+
+15.9.5.4_Date.prototype.toTimeString
+dir
+
+15.9.5.16_Date.prototype.getDay
+dir
+
+S15.9.5_A01_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+92782f4d3f42f71c162ee973f299968f
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+S15.9.5_A20_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+7d04ce6f234c9495a234a8f072bd56e3
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+S15.9.5_A03_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+b28f86ad4d4098da8576f12e4cb10d57
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+15.9.5.29_Date.prototype.setUTCMilliseconds
+dir
+
+S15.9.5_A22_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+a6fa0223c4cd3d81b668b578e4a4b259
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+S15.9.5_A05_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+9621b49c17a128ff618e179b6702b721
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+S15.9.5_A41_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+ab2708a0ef828c9b3fa5ef0b234762b9
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+15.9.5.3_Date.prototype.toDateString
+dir
+
+S15.9.5_A24_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+bc83a1f33ff8b63d8268e94373a05424
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+S15.9.5_A07_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+2fd68b3ece1fcb4b839046b22b9ad908
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+S15.9.5_A26_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+88b87d3b9de36013b4ceb6a109c824b1
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+S15.9.5_A09_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+24ccf01c5fd229ee2a672bd1478fee08
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+S15.9.5_A28_T1.js
+file
+
+
+
+
+2009-07-01T01:06:35.000000Z
+527c2b20038e76e440a4f78f99e0f18f
+2009-06-25T10:29:27.039796Z
+4
+christian.plesner.hansen
+has-props
+
+15.9.5.11_Date.prototype.getUTCFullYear
+dir
+

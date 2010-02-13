@@ -1,0 +1,40 @@
+8
+
+dir
+12
+http://sputniktests.googlecode.com/svn/trunk/tests/Conformance/15_Native_ECMA_Script_Objects/15.9_Date_Objects
+http://sputniktests.googlecode.com/svn
+
+
+
+2009-06-25T13:42:04.674842Z
+6
+christian.plesner.hansen
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+0941ce9a-398d-11de-82fb-7f665ef830f7
+
+15.9.3_The_Date_Constructor
+dir
+
+15.9.4_Properties_of_the_Date_Constructor
+dir
+
+15.9.5_Properties_of_the_Date_Prototype_Object
+dir
+
+15.9.2_The_Date_Constructor_Called_as_a_Function
+dir
+
