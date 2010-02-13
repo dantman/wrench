@@ -8,7 +8,21 @@ if ( isNaN(Date.parse("2000-01-01T00:00:00.000Z")) ) {
 					new NativeDate(Date.parse(arg)) :
 					// We have to manually make calls depending on argument
 					// length here
-					NativeDate.constructor.apply(new NativeDate(), arguments);
+					arguments.length >= 7 ?
+					new NativeDate(arguments[0], arguments[1], arguments[2], arguments[3], arguments[4], arguments[5], arguments[6]) :
+					arguments.length >= 6 ?
+					new NativeDate(arguments[0], arguments[1], arguments[2], arguments[3], arguments[4], arguments[5]) :
+					arguments.length >= 5 ?
+					new NativeDate(arguments[0], arguments[1], arguments[2], arguments[3], arguments[4]) :
+					arguments.length >= 4 ?
+					new NativeDate(arguments[0], arguments[1], arguments[2], arguments[3]) :
+					arguments.length >= 3 ?
+					new NativeDate(arguments[0], arguments[1], arguments[2]) :
+					arguments.length >= 2 ?
+					new NativeDate(arguments[0], arguments[1]) :
+					arguments.length >= 1 ?
+					new NativeDate(arguments[0]) :
+					new NativeDate();
 				d.constructor = Date; // Prevent mixups with unfixed Date object
 				return d;
 			}
