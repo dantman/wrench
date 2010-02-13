@@ -3,7 +3,7 @@ if ( isNaN(Date.parse("2000-01-01T00:00:00.000Z")) ) {
 	(function(NativeDate, global) {
 		var Date = function(arg) {
 			if ( this instanceof Date || this instanceof NativeDate ) {
-				var d = isString(arg) ?
+				var d = typeof arg === "string" ?
 					// We explicitly pass it through parse:
 					new NativeDate(Date.parse(arg)) :
 					// We have to manually make calls depending on argument
