@@ -12,6 +12,13 @@ FILES_TOP = ${SRC_DIR}/top.txt\
 	${SRC_DIR}/Array.generic.js\
 	${SRC_DIR}/String.js
 
+FILES_ES5 = ${SRC_DIR}/top.txt\
+	${SRC_DIR}/es5/Object.js\
+	${SRC_DIR}/es5/Date.js\
+	${SRC_DIR}/es5/String.js\
+	${SRC_DIR}/js16/Array.js\
+	${SRC_DIR}/js18/Array.js
+	
 FILES15 = ${FILES_TOP}\
 	${SRC_DIR}/Array16.js\
 	${SRC_DIR}/Array18.js\

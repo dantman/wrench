@@ -107,11 +107,6 @@ String.prototype.numberOf = function numberOf(other, offset) {
 String.prototype.reverse = function reverse() {
 	return this.split('').reverse().join('');
 };
-/**
- * Trim all whitespace from the left side of the string
- * 
- * @return {String} The new trimmed string
- */
 
 /**
  * Trim all whitespace from the left side of the string
@@ -132,17 +127,6 @@ if ( !String.prototype.trimRight )
 	String.prototype.trimRight = function trimRight() {
 		return this.replace(/\s*\s*$/, '');
 	};
-
-/**
- * Trim all whitespace from both sides of the string
- * 
- * @return {String} The new trimmed string
- */
-if ( !String.prototype.trim )
-	String.prototype.trim = function trim() {
-		return this.trimLeft().trimRight();
-	};
-
 
 /**
  * Strip characters from both sides of the string

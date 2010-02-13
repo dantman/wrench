@@ -1,5 +1,5 @@
 /**
- * @fileOverview This file contains Array compatibility prototypes for those introduced in JavaScript 1.6
+ * @fileOverview This file contains Array compatibility prototypes for those introduced in JavaScript 1.6 and es5
  */
 
 /**#@+
