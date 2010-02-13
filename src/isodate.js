@@ -1,6 +1,6 @@
 if ( isNaN(Date.parse("2000-01-01T00:00:00.000Z")) ) {
 	// This embedding implementation does not handle ISO dates
-	(function(NativeDate, global) {
+	Date = (function(NativeDate) {
 		var Date = function(arg) {
 			if ( this instanceof Date || this instanceof NativeDate ) {
 				var d = typeof arg === "string" ?
@@ -66,11 +66,6 @@ if ( isNaN(Date.parse("2000-01-01T00:00:00.000Z")) ) {
 			}
 			return NativeDate.parse.apply(this, arguments);
 		};
-		global.Date = Date;
-	})(
-		Date,
-		this.Date === Date ? // this === global ?
-		this : undefined // XXX where is "global" if "this" !== "global" ?
-		// (Helma NG, GPSEE, possibly Flusspferd)
-	);
+		return Date;
+	})(Date);
 }
