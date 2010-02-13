@@ -32,6 +32,7 @@ if ( isNaN(Date.parse("2000-01-01T00:00:00.000Z")) ) {
 		// Copy native methods explicitly, they may be non-enumerable
 		Date.now = NativeDate.now;
 		Date.UTC = NativeDate.UTC;
+		Date.prototype = NativeDate.prototype;
 		// Upgrade Date.parse to handle the ISO dates we use (maybe we'll upgrade it more later and put it into Wrench.js)
 		Date.parse = function(string) {
 			var m = /^(\d\d\d\d)-(\d\d)-(\d\d)T(\d\d):(\d\d):(\d\d(?:\.\d+)?)Z$/.exec(string);
