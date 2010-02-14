@@ -63,10 +63,11 @@ Object.merge = function merge() {
  * @param {Object} obj The object to count
  * @return {Number} The number of pairs in the object
  */
-(function(useCount) {
-	Object.count = function count(obj) {
-		if ( useCount ) return obj.__count__;
+Object.count = ({}).__count__ === 0 ?
+	function(obj) {
+		return obj.__count__;
+	} :
+	function(obj) {
 		return Object.keys(obj).length;
 	};
-})(({}).__count__ === 0);
 
